@@ -38,7 +38,19 @@ def diretrizProcedimento():
         print('Transfira para o suporte de marketing.')
 
 
+def question_end():
+    endprogram = input('Deseja encerrar o programa? S/N ').lower()
+    while endprogram not in ['s', 'n']:
+        print('Digite um caractere Sim(S) ou Não(N)')
+        endprogram = input('Deseja encerrar o programa? S/N ').lower()
+    return endprogram == 's'
+
+
 print('****Diretrizes de procedimentos****\n')
 
-diretrizProcedimento()
+while True:
+    diretrizProcedimento()
+    if question_end():
+        break
+
 print('**** Fim do Programa ****')
